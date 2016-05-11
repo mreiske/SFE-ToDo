@@ -2,7 +2,7 @@ Name of QuantLet : SFEVolSurfPlot
 Published in: Statistics of Financial Markets
 Description: 'Produces a graphic visualisation of the implied volatility surface of the DAX option. The original options are shown as blue points.'
 Keywords:
-- bisection-method
+'- bisection-method
 - black-scholes
 - data visualization
 - dax
@@ -14,15 +14,15 @@ Keywords:
 - plot
 - surface
 - visualization
-- volatility
+- volatility'
 See also:
-- SFEPCA
+'- SFEPCA
 - SFEVolaCov
 - SFEVolaPCA
-- SFEVolaTermStructure
+- SFEVolaTermStructure'
 Author:
-- Maria Grith
-- Awdesch Melzer
+'- Maria Grith
+- Awdesch Melzer'
 Author[Matlab]: Maria Grith
 Submitted: Fri, July 24 2015 by quantomas
 Submitted[Matlab]: Tue, May 03 2016 by Meng Jou Lu
