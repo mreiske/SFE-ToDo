@@ -13,4 +13,4 @@ sigma   = 0.01;
 Params  = [a, b, sigma];
 
 % execute function
-CIRml(Params,Model)
+CIRml(Params, Model)

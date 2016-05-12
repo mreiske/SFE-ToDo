@@ -8,8 +8,8 @@ disp('Please input spot S, strike K, and interest r as: [230, 210, 0.04545]') ;
 disp(' ') ;
 para = input('[spot price, strike price, interest rate]=');
 while length(para) < 3
-  disp('Not enough input arguments. Please input in 1*3 vector form like [230, 210, 0.04545] or [230 210 0.04545]');
-  para=input('[spot price, strike price, interest rate] = ');
+    disp('Not enough input arguments. Please input in 1*3 vector form like [230, 210, 0.04545] or [230 210 0.04545]');
+    para=input('[spot price, strike price, interest rate] = ');
 end
 
 % spot price
@@ -86,7 +86,7 @@ end
 cc = exp(-(r - b) * tau) * S * normc2 - exp(-r * tau) * K * normc1;
 
 % norm d
-n = 0;
+n    = 0;
 sum1 = 0;
 sum2 = 0;
 while n <= 12

@@ -1,4 +1,4 @@
-function lnL = CIRml(Params,Model)
+function lnL = CIRml(Params, Model)
     % define input parameters
     lData = Model.Data;
     DataF = lData(1:end - 1);

@@ -9,8 +9,8 @@ disp(' ') ;
 para = input('[spot price, strike price, interest rate] = ');
 
 while length(para) < 3
-  disp('Not enough input arguments. Please input in 1*3 vector form like [98, 100, 0.05] or [98 100 0.05]');
-  para = input('[spot price, strike price, interest rate] = ');
+    disp('Not enough input arguments. Please input in 1*3 vector form like [98, 100, 0.05] or [98 100 0.05]');
+    para = input('[spot price, strike price, interest rate] = ');
 end
 
 % spot price
@@ -28,8 +28,8 @@ disp(' ') ;
 para2 = input('[cost of carry b, volatility sig, tau] = ') ;
 
 while length(para2) < 3
-  disp('Not enough input arguments. Please input in 1*3 vector form like [0.05, 0.20, 20/52] or [0.05 0.20 20/52]');
-  para2 = input('[cost of carry b, volatility sig, tau]=');
+    disp('Not enough input arguments. Please input in 1*3 vector form like [0.05, 0.20, 20/52] or [0.05 0.20 20/52]');
+    para2 = input('[cost of carry b, volatility sig, tau]=');
 end
 
 % cost of carry, volatility, remaining time
@@ -38,7 +38,7 @@ sig = para2(2);
 tau = para2(3);
 
 % Main computation
-y = (log(S / K) + (b - (sig^2) / 2) * tau )/( sig * sqrt(tau));
+y = (log(S / K) + (b - (sig^2) / 2) * tau) / (sig * sqrt(tau));
 c = exp(-(r - b) * tau) * S * normcdf(y + sig * sqrt(tau)) - exp(-r * tau) * K * normcdf(y);
 
 % Output
