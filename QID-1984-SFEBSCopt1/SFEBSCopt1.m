@@ -27,8 +27,8 @@ disp(' ') ;
 
 para2 = input('[cost of carry b, volatility sig, tau]=') ;
 while length(para2) < 3
-  disp('Not enough input arguments. Please input in 1*3 vector form like [0.04545, 0.25, 0.5] or [0.04545 0.25 0.5]');
-  para2 = input('[cost of carry b, volatility sig, tau] = ');
+    disp('Not enough input arguments. Please input in 1*3 vector form like [0.04545, 0.25, 0.5] or [0.04545 0.25 0.5]');
+    para2 = input('[cost of carry b, volatility sig, tau] = ');
 end
 
 % cost of carry, volatility, remaining time
@@ -47,13 +47,13 @@ a1     = 0.17401209;
 a2     = -0.04793922;
 a3     = 0.373927817;
 norma1 = 1 - (a1 * t1 + a2 * (t1^2) + a3 * (t1^3)) * exp(-y .* y / 2);
-norma2 = 1 - (a1 * t2 + a2 * (t2^2) + a3 * (t2^3))*exp(-(y + sig * sqrt(tau))^2 / 2);
+norma2 = 1 - (a1 * t2 + a2 * (t2^2) + a3 * (t2^3)) * exp(-(y + sig * sqrt(tau))^2 / 2);
 ca     = exp(-(r - b) * tau) * S * norma2 - exp(-r * tau) * K * norma1;
 
 % norm b
 bb     = 0.231641888;
 t1     = 1 / (1 + bb * y);
-t2     = 1 / (1 + bb *(y + sig * sqrt(tau)));
+t2     = 1 / (1 + bb * (y + sig * sqrt(tau)));
 a1     = 0.127414796;
 a2     = -0.142248368;
 a3     = 0.71070687;
@@ -77,7 +77,7 @@ if y < 0
     else
 	normc1 = 0.5 + normc1;	
 end
-normc2 = 0.5 - 1.0/( 2.0 * ( (1.0 + a1 * t2 + a2 * t2^2 + a3 * t2^3 + a4 * t2^4 + a5 * t2^5)^8 ) )
+normc2 = 0.5 - 1.0 / ( 2.0 * ( (1.0 + a1 * t2 + a2 * t2^2 + a3 * t2^3 + a4 * t2^4 + a5 * t2^5)^8 ) )
 if (y + sig * sqrt(tau)) < 0
 	normc2 = 0.5 - normc2;
     else
@@ -91,7 +91,7 @@ sum1 = 0;
 sum2 = 0;
 while n <= 12
 	sum1 = sum1 + ((-1)^n) * y^(2 * n + 1)/(factorial(n) * 2^n * (2 * n + 1));
-	sum2 = sum2 + ((-1)^n)*(y + sig * sqrt(tau))^(2 * n + 1)/(factorial(n) * 2^n * (2 * n+1));
+	sum2 = sum2 + ((-1)^n)*(y + sig * sqrt(tau))^(2 * n + 1) / (factorial(n) * 2^n * (2 * n + 1));
 	n = n + 1;
 end
 

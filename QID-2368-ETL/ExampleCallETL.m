@@ -1,5 +1,5 @@
 % Example Call
-% Plaese first save the file on your current workingdirectory and then use the xample call
+% Plaese first save the file on your current working directory and then use the example call
 index     = 37.2416;
 recoveryR = 0.4;                            % Recovery rate
 UAP       = [0.03, 0.06, 0.09, 0.12, 0.22]; % Upper attachment points

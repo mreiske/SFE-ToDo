@@ -6,8 +6,8 @@ disp('Please input [Probability, Number n] as: [0.5, 15]') ;
 disp(' ') ;
 para = input('[Probability, Number n] = ');
 while length(para) < 2
-  disp('Not enough input arguments. Please input in 1 * 2 vector form like [0.5, 15] or [0.5 15]');
-  para = input('[Probability, Number n] = ');
+    disp('Not enough input arguments. Please input in 1 * 2 vector form like [0.5, 15] or [0.5 15]');
+    para = input('[Probability, Number n] = ');
 end
 p = para(1);
 n = para(2);
@@ -34,8 +34,8 @@ disp('Please input [Value of x, Probability, Number n] as: [5, 0.5, 15]') ;
 disp(' ') ;
 para = input('[Value of x, Probability, Number n] = ');
 while length(para) < 3
-  disp('Not enough input arguments. Please input in 1 * 2 vector form like [5, 0.5, 15] or [5 0.5 15]');
-  para = input('[Value of x, Probability, Number n] = ');
+    disp('Not enough input arguments. Please input in 1 * 2 vector form like [5, 0.5, 15] or [5 0.5 15]');
+    para = input('[Value of x, Probability, Number n] = ');
 end
 x1 = para(1);
 p1 = para(2);

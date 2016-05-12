@@ -38,7 +38,7 @@ sig = para2(2);
 tau = para2(3);
 
 % Main computation
-y = ( log(S / K) + (b - (sig^2) / 2) * tau )/( sig * sqrt(tau) );
+y = (log(S / K) + (b - (sig^2) / 2) * tau )/( sig * sqrt(tau));
 c = exp(-(r - b) * tau) * S * normcdf(y + sig * sqrt(tau)) - exp(-r * tau) * K * normcdf(y);
 
 % Output
