@@ -20,3 +20,4 @@ Author[Matlab]: Andrija Mihoci
 Submitted: Fri, June 05 2015 by Lukas Borke
 Submitted[Matlab]: Mon, May 02 2016 by Meng Jou Lu
 Datafiles: sfm_pri.dat
+Datafiles[Matlab]: FTSE_DAX.dat
