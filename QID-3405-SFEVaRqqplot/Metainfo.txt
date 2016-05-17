@@ -14,6 +14,7 @@ Author[Matlab]: Marlene Mueller
 Submitted: Sat, July 18 2015 by quantomas
 Submitted[Matlab]: Mon, May 2 2016 by Meng Jou Lu
 
+Output[Matlab]: QQ plot
 Datafiles: kupfer.dat
 
 Example: QQ plots for RMA and EMA
