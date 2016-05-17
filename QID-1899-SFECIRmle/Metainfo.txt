@@ -14,7 +14,7 @@ Author[Matlab]: Li Sun
 
 Datafiles: yield_US3month9808.txt
 
-Submitted: Fri, May 06 2016 by Christoph Schult
+Submitted: Tue, May 17 2016 by Christoph Schult
 
 Input: 
 - yield_US3month9808: text file for the annualized yield on U.S. Treasury Bills with three months to maturity

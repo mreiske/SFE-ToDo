@@ -10,7 +10,7 @@ See also: SFECIRmle, SFEcapvola, SFEcapvplot, SFEcirpricing, SFEscap, SFEsimCIR2
 
 Author: Li Sun
 
-Submitted: Wed, December 23 2009 by Lasse Groth
+Submitted: Tue, May 17 2016 by Christoph Schult
 
 Input: 
 - Params: a, b, sigma

@@ -10,7 +10,7 @@ See also: BaseCorrGaussModelCDO, ETL, SFEETLGaussTr1, SFEbaseCorr, SFEbaseCorr, 
 
 Author: Awdesch Melzer
 
-Submitted: Fri, May 06 2016 by Christoph Schult
+Submitted: Tue, May 17 2016 by Christoph Schult
 
 Input: 
 - a: scalar, point from interval for optimization algorithm

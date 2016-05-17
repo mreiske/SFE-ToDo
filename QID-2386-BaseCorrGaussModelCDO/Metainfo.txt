@@ -14,7 +14,7 @@ Author[Matlab]: Barbara Choros
 
 Submitted: Wed, April 23 2014 by Awdesch Melzer
 
-Submitted[Matlab]: Wed, May 04 2016 by Christoph Schult
+Submitted[Matlab]: Tue, May 17 2016 by Christoph Schult
 
 Input: 
 - a (scalar) : point from interval for optimization algorithm

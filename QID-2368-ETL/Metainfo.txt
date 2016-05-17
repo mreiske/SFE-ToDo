@@ -14,7 +14,7 @@ Author: Awdesch Melzer
 
 Author[Matlab]: Awdesch Melzer
 
-Submitted: Mon, May 09 2016 by Christoph Schult
+Submitted: Tue, May 17 2016 by Christoph Schult
 
 Input:
 - a: scalar, point from interval for optimization algorithm

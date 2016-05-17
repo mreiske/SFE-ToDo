@@ -29,7 +29,7 @@ Author[Matlab]: Julius Mungo
 
 Submitted: Thu, July 16 2015 by quantomas
 
-Submitted[Matlab]: Wed, May 04 2016 by Christoph Schult
+Submitted[Matlab]: Tue, May 17 2016 by Christoph Schult
 
 Datafiles:
 - ConVola(FIAPARCH)bayer.txt
