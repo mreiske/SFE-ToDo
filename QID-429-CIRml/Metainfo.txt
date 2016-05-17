@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: 'Defines the log-likelihood function of the CIR model used in SFECIRmle.'
 
-Keywords: cir, interest-rate, likelihood, CIR, model, estimation 
+Keywords: cir, interest-rate, likelihood, cir, model, estimation 
 
 See also: SFECIRmle, SFEcapvola, SFEcapvplot, SFEcirpricing, SFEscap, SFEsimCIR2, SFEsimVasi, SFEustb
 

@@ -6,7 +6,7 @@ Description: 'Claculates expected loss of the equity tranche using the one facto
 with one-year default probability computed from the iTraxx index Series 8 with 5 years maturity 
 on 20071022. Package pracma for numerical integration is required.'
 
-Keywords: expected loss, default, credit risk, equity tranche, multivariate normal, Gauss Konrad, numerical integration, integration
+Keywords: Expected loss, default, Credit Risk, Equity tranche, multivariate normal, Gauss Kronrod, numerical integration, integration
 
 See also: SFEbaseCorr, SFEcompCorr, ETL, lowerTrLossGauss, BaseCorrGaussModelCDO, SFEdefault, SFEmyfun
 

@@ -24,7 +24,6 @@ hold on;
 % create plot for Bayer
 subplot(2, 2, 2)
 x = load('ConVola(FIAPARCH)bayer.txt');
-
 n = length(x);
 plot(x)
 box on
@@ -46,8 +45,8 @@ hold on;
 % create plot for Siemens
 subplot(2, 2, 3)
 x = load('ConVola(FIAPARCH)siemens.txt');
-plot(x)
 n = length(x);
+plot(x)
 box on
 set(gca, 'LineWidth', 1.6, 'FontSize', 16, 'FontWeight', 'Bold')
 hold on;
@@ -65,10 +64,10 @@ hold on;
 % create plot for VW
 subplot(2, 2, 4)
 x = load('ConVola(FIAPARCH)vw.txt');
-  box on
-set(gca, 'LineWidth', 1.6, 'FontSize', 16, 'FontWeight', 'Bold')
-plot(x)
 n = length(x);
+plot(x)
+box on
+set(gca, 'LineWidth', 1.6, 'FontSize', 16, 'FontWeight', 'Bold')
 hold on;
 
 title('Volkswagen', 'FontSize', 16, 'FontWeight', 'Bold');
@@ -79,7 +78,7 @@ xlim([0 n])
 
 y = load('ConVola(HYGARCH)VW.txt');
 plot(y, '-r')
-  box on
+box on
 set(gca, 'LineWidth', 1.6, 'FontSize', 16, 'FontWeight', 'Bold')
 hold on;
 

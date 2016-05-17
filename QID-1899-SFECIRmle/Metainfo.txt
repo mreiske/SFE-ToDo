@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: Calibrates all the parameters of the CIR model using real data.
 
-Keywords: calibration, cir, interest-rate, likelihood, least squares, optimization, estimation
+Keywords: calibration, cir, interest-rate, likelihood, least-squares, optimization, estimation
 
 See also: CIRml, SFEcapvola, SFEsimCIR2, SFEsimVasi, SFEustb, vola
 

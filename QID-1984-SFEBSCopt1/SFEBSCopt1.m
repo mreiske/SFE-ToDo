@@ -9,7 +9,7 @@ disp(' ') ;
 para = input('[spot price, strike price, interest rate]=');
 while length(para) < 3
     disp('Not enough input arguments. Please input in 1*3 vector form like [230, 210, 0.04545] or [230 210 0.04545]');
-    para=input('[spot price, strike price, interest rate] = ');
+    para = input('[spot price, strike price, interest rate] = ');
 end
 
 % spot price
@@ -37,7 +37,7 @@ sig = para2(2);
 tau = para2(3);
 
 % main computation
-y   = ( log(S/K) + (b-(sig^2)/2)*tau )/( sig*sqrt(tau) );
+y   = (log(S / K) + (b - (sig^2) / 2) * tau ) / (sig * sqrt(tau));
 
 % norm a
 ba     = 0.332672527;
@@ -59,7 +59,7 @@ a2     = -0.142248368;
 a3     = 0.71070687;
 a4     = -0.726576013;
 a5     = 0.530702714;
-normb1 = 1 - (a1 * t1 + a2 * (t1^2) + a3 * (t1^3) + a4 * (t1^4) + a5 * (t1^5)) * exp(-y^2/2);
+normb1 = 1 - (a1 * t1 + a2 * (t1^2) + a3 * (t1^3) + a4 * (t1^4) + a5 * (t1^5)) * exp(-y^2 / 2);
 normb2 = 1 - (a1 * t2 + a2 * (t2^2) + a3 * (t2^3) + a4*(t2^4) + a5*(t2^5)) * exp(-(y + sig * sqrt(tau))^2 / 2);
 cb     = exp(-(r - b) * tau) * S * normb2 - exp(-r * tau) * K * normb1;
 
@@ -71,17 +71,19 @@ a4     = -0.00009862;
 a5     = 0.00058155;
 t1     = abs(y);
 t2     = abs(y + sig * sqrt(tau));
+
 normc1 = 1.0 / 2.0 - 1.0 / ( 2.0 * ( (1.0 + a1 * t1 + a2 * t1^2 + a3 * t1^3 + a4 * t1^4 + a5 * t1^5)^8 ));
 if y < 0
     normc1 = 0.5 - normc1;
-    else
-	normc1 = 0.5 + normc1;	
+else
+    normc1 = 0.5 + normc1;	
 end
-normc2 = 0.5 - 1.0 / ( 2.0 * ( (1.0 + a1 * t2 + a2 * t2^2 + a3 * t2^3 + a4 * t2^4 + a5 * t2^5)^8 ) )
+
+normc2 = 0.5 - 1.0 / (2.0 * ( (1.0 + a1 * t2 + a2 * t2^2 + a3 * t2^3 + a4 * t2^4 + a5 * t2^5)^8 ))
 if (y + sig * sqrt(tau)) < 0
-	normc2 = 0.5 - normc2;
-    else
-	normc2 = 0.5 + normc2;	
+    normc2 = 0.5 - normc2;
+else
+    normc2 = 0.5 + normc2;	
 end
 cc = exp(-(r - b) * tau) * S * normc2 - exp(-r * tau) * K * normc1;
 
@@ -90,9 +92,9 @@ n    = 0;
 sum1 = 0;
 sum2 = 0;
 while n <= 12
-	sum1 = sum1 + ((-1)^n) * y^(2 * n + 1)/(factorial(n) * 2^n * (2 * n + 1));
-	sum2 = sum2 + ((-1)^n)*(y + sig * sqrt(tau))^(2 * n + 1) / (factorial(n) * 2^n * (2 * n + 1));
-	n = n + 1;
+    sum1 = sum1 + ((-1)^n) * y^(2 * n + 1)/(factorial(n) * 2^n * (2 * n + 1));
+	  sum2 = sum2 + ((-1)^n) * (y + sig * sqrt(tau))^(2 * n + 1) / (factorial(n) * 2^n * (2 * n + 1));
+	  n    = n + 1;
 end
 
 normd1 = 0.5 + sum1 / sqrt(2 * pi);
