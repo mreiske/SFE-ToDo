@@ -1,9 +1,8 @@
-## <img src="pics/Project.png" width="60" /> **SFE-ToDo**
+##SFE-ToDo
 
 Description: For the PhD students required to transfer Quantlets of SFE from Quantnet 1.0 to Quantnet 2.0.
 
 __This repository includes:__
-- Data2004-2014: The dataset used to update the Qs. (Q = Quantlet)
 - Every Q has to be in its own subfolder in the repository, e.g. [SFEReturns](https://github.com/QuantLet/SFE-ToDo/tree/master/SFEReturns)
 - Styleguide and FAQ - [General Rules](https://github.com/QuantLet/Styleguide-and-FAQ)
 
