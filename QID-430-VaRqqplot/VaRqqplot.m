@@ -2,16 +2,16 @@
 
 function VaRqqplot(y, VaR)
 
-n=length(y);
-d=1;
-nov=1;
-h=250;
+n   = length(y);
+d   = 1;
+nov = 1;
+h   = 250;
 
-p1=sum(y,2);
-p=p1(h+1:n);
-qn = norminv(((1:(n-h))-0.5)./(n-h),0,1);
-tmp=p./VaR(:,1);
-h=qqplot(tmp)
+p1  = sum(y,2);
+p   = p1(h+1:n);
+qn  = norminv(((1:(n-h))-0.5)./(n-h),0,1);
+tmp = p./VaR(:,1);
+h   = qqplot(tmp)
 
 set(h(1),'Marker','.')
 set(h(3),'LineStyle','-')

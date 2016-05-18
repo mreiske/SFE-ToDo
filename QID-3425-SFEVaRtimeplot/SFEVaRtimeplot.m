@@ -3,12 +3,12 @@ clear
 clc
 close all
 
-x1=load('kupfer.dat');
-x=x1(1:1001);
-y=diff(log(x));
-h=250;
-opt1=VaRest(y,1);
-opt2=VaRest(y,2);
+x1   = load('kupfer.dat');
+x    = x1(1:1001);
+y    = diff(log(x));
+h    = 250;
+opt1 = VaRest(y,1);
+opt2 = VaRest(y,2);
 
 hold on
 plot(h+1:length(x)-1,opt1(:,1),'g','LineStyle','--')
