@@ -31,4 +31,5 @@ Author:
 Author[Matlab]: Marlene Müller
 Submitted: Wed, July 22 2015 by quantomas
 Submitted[Matlab]: Mon, May 3 2016 by Meng Jou Lu
+Output[Matlab]: 'Time plot of VaR forecasts and the associated changes of the P&L of the portfolio.'
 Datafiles: kupfer.dat

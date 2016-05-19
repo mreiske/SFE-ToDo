@@ -1,8 +1,7 @@
 Name of QuantLet : SFEPCA
 Published in: Statistics of Financial Markets
 Description: 'Calculates and plots the factor loadings of the first and second principal components of implied DAX volatilities at the money.'
-Keywords:
-- atm
+Keywords:- atm
 - black-scholes
 - data visualization
 - dax
@@ -18,9 +17,11 @@ Keywords:
 - principal-components
 - vdax
 - volatility
-See also: SFEVolSurfPlot
-Output: 'Plots of the first and second principal components of the VDAX index'
 
+See also: SFEVolSurfPlot
+See also[Matlab]: 'SFEVolSurfPlot, SFEVolaCov, SFEVolaPCA, SFEVolaTermStructure'
+Output: 'Plots of the first and second principal components of the VDAX index'
+Output[Matlab]: 'Plots of the first and second principal components of the VDAX index.'
 Author:
 - Juliane Scheffel
 - Mathias Fengler

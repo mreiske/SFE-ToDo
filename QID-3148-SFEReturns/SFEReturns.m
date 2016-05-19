@@ -6,23 +6,23 @@ close all
 % Read data for FTSE and DAX
 
 DS = load('FTSE_DAX.dat');
-D = [DS(:,1)];                            % date
-S = [DS(:,2:43)];                         % S(t)
-s = [log(S)];                             % log(S(t))
-r = [s(2:end,:) - s(1:(end-1),:)];        % r(t)
-n = length(r);                            % sample size
-t = [1:n];                                % time index, t
+D  = [DS(:,1)];                            % date
+S  = [DS(:,2:43)];                         % S(t)
+s  = [log(S)];                             % log(S(t))
+r  = [s(2:end,:) - s(1:(end-1),:)];        % r(t)
+n  = length(r);                            % sample size
+t  = [1:n];                                % time index, t
 format short;
 
 % Estimation of the first order autocorrelation
 
 for i = 1:42;
-  yp=corrcoef(r(1:(length(r)-1),i), r(2:(length(r)),i));
-  ys=corrcoef(r(1:(length(r)-1),i).*r(1:(length(r)-1),i), r(2:(length(r)),i).*r(2:(length(r)),i));
-  ya=corrcoef(abs(r(1:(length(r)-1),i)), abs(r(2:(length(r)),i)));
-  zp(i)=[yp(2,1,:)];
-  zs(i)=[ys(2,1,:)];
-  za(i)=[ya(2,1,:)];
+  yp    = corrcoef(r(1:(length(r)-1),i), r(2:(length(r)),i));
+  ys    = corrcoef(r(1:(length(r)-1),i).*r(1:(length(r)-1),i), r(2:(length(r)),i).*r(2:(length(r)),i));
+  ya    = corrcoef(abs(r(1:(length(r)-1),i)), abs(r(2:(length(r)),i)));
+  zp(i) = [yp(2,1,:)];
+  zs(i) = [ys(2,1,:)];
+  za(i) = [ya(2,1,:)];
 end
 
 % Estimation of skewness
