@@ -1,36 +1,37 @@
 
-[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/banner.png" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
+[<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/banner.png" width="880" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
 
-## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEVaRqqplot** [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
+## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEVaRqqplot**[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
 
 ```yaml
-
 Name of QuantLet : SFEVaRqqplot
 
-Published in : Statistics of Financial Markets
+Published in: Statistics of Financial Markets
 
-Description : 'Visualizes the reliability of the Value at Risk (VaR) forecasts based on Rectangular
-Moving Average (RMA) and Exponentially Moving Average (EMA) models.'
+Description: 'Visualizes the reliability of the Value at Risk (VaR) forecasts based on Rectangular Moving Average (RMA) and Exponentially Moving Average (EMA) models.'
 
-Keywords : 'VaR, bond, data visualization, ema, estimation, exceedance, financial, forecast,
-graphical representation, moving-average, multivariate normal, normal-distribution, plot,
-portfolio, qq-plot, risk, rma, time-series'
+Keywords: 'VaR, bond, data visualization, ema, estimation, exceedance, financial, forecast, graphical representation, moving-average, multivariate normal, normal-distribution, plot, portfolio, qq-plot, risk, rma, time-series'
 
-See also : SFEVaRbank, SFEVaRtimeplot, SFEVaRtimeplot2, VaRest, VaRqqplot
+See also: SFEVaRbank, SFEVaRtimeplot, SFEVaRtimeplot2, VaRest, VaRqqplot
 
-Author : Wolfgang K. Härdle
+Author: Wolfgang K. Härdle
+Author[Matlab]: Marlene Mueller
 
-Submitted : Sat, July 18 2015 by quantomas
+Submitted: Sat, July 18 2015 by quantomas
+Submitted[Matlab]: Mon, May 2 2016 by Meng Jou Lu
 
-Datafiles : kupfer.dat
+Output[Matlab]: QQ plot
+Datafiles: kupfer.dat
 
-Example : QQ plots for RMA and EMA
+Example: QQ plots for RMA and EMA
 
 ```
 
 ![Picture1](SFEVaRqqplot-1.png)
+![Picture2](SFEVaRqqplot_ex1_m.png)
+![Picture3](SFEVaRqqplot_ex2_m.png)
 
-
+### R Code:
 ```r
 # clear variables and close windows
 rm(list = ls(all = TRUE))
@@ -103,4 +104,27 @@ opt2 = VaRest(y, 2)
 par(mfrow = c(2, 1))
 VaRqqplot(y, opt1)
 VaRqqplot(y, opt2) 
+```
+### Matlab Code
+```matlab
+
+clear
+close all
+x1   = load('kupfer.dat');
+x    = x1(1:1001);
+y    = diff(log(x));
+h    = 250;
+
+% Option 1=RMA, 2=EMA
+% opt1 = RMA;
+% opt2 = EMA;
+
+opt1 = VaRest(y,1);
+opt2 = VaRest(y,2);
+
+figure(1)
+VaRqqplot(y,opt1)
+figure(2)
+VaRqqplot(y,opt2)
+daspect([1 1 1])
 ```

@@ -1,30 +1,42 @@
 
-[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/banner.png" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
+[<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/banner.png" width="880" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
 
-## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEReturns** [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
+## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEReturns**[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
 
 ```yaml
-
 Name of QuantLet : SFEReturns
-
-Published in : Statistics of Financial Markets
-
-Description : 'Computes the first order auto correlation of the returns, squared returns and
-absolute returns as well as the skewness, kurtosis and Jarque-Bera test statistic for German blue
-chips, 1974 - 1996.'
-
-Keywords : 'autocorrelation, blue chips, correlation, dax, descriptive-statistics, financial,
-jarque-bera-test, kurtosis, log-returns, returns, skewness, statistics, test'
-
-Author : Joanna Tomanek
-
-Submitted : Fri, June 05 2015 by Lukas Borke
-
-Datafiles : sfm_pri.dat
+Published in: Statistics of Financial Markets
+Description: 'Computes the first order auto correlation of the returns, squared returns and absolute returns as well as the skewness, kurtosis and Jarque-Bera test statistic for German blue chips, 1974 - 1996.'
+Keywords:
+- autocorrelation
+- blue chips
+- correlation
+- dax
+- descriptive-statistics
+- financial
+- jarque-bera-test
+- kurtosis
+- log-returns
+- returns
+- skewness
+- statistics
+- test
+Author: Joanna Tomanek
+Author[Matlab]: Andrija Mihoci
+Submitted: Fri, June 05 2015 by Lukas Borke
+Submitted[Matlab]: Mon, May 02 2016 by Meng Jou Lu
+Input[Matlab]:
+- Params: a, b, sigma
+- X: yields of the US 3 month treasury bill
+Output[Matlab]: Value of the log-likelihood function in Vasicek model.
+Datafiles: sfm_pri.dat
+Datafiles[Matlab]: FTSE_DAX.dat
 
 ```
 
 
+
+### R Code:
 ```r
 
 # clear variables and close windows
@@ -91,5 +103,60 @@ msg2 = "first order auto correlation of returns, squared returns and absolute re
 print(msg2)
 print("")
 result 
+```
+### Matlab Code
+```matlab
 
+clear
+clc 
+close all
+
+% Read data for FTSE and DAX
+
+DS = load('FTSE_DAX.dat');
+D  = [DS(:,1)];                            % date
+S  = [DS(:,2:43)];                         % S(t)
+s  = [log(S)];                             % log(S(t))
+r  = [s(2:end,:) - s(1:(end-1),:)];        % r(t)
+n  = length(r);                            % sample size
+t  = [1:n];                                % time index, t
+format short;
+
+% Estimation of the first order autocorrelation
+
+for i = 1:42;
+  yp    = corrcoef(r(1:(length(r)-1),i), r(2:(length(r)),i));
+  ys    = corrcoef(r(1:(length(r)-1),i).*r(1:(length(r)-1),i), r(2:(length(r)),i).*r(2:(length(r)),i));
+  ya    = corrcoef(abs(r(1:(length(r)-1),i)), abs(r(2:(length(r)),i)));
+  zp(i) = [yp(2,1,:)];
+  zs(i) = [ys(2,1,:)];
+  za(i) = [ya(2,1,:)];
+end
+
+% Estimation of skewness
+
+skew = (skewness(r))';
+
+% Estimation of kurtosis
+
+kurt = (kurtosis(r))';
+
+% Estimation of the BJ test statistic for returns
+
+BJ = n * ( skew .* skew / 6 + ( ( kurt - 3 ) .* ( kurt - 3 ) ) / 24 );
+
+% Estimated parameters
+
+Y = [ zp' zs' za' skew kurt BJ ];
+
+disp('First order autocorrelation of the returns,')
+disp('First order autocorrelation of the squared returns,')
+disp('First order autocorrelation of the absolute returns,')
+disp('Skewness & ')
+disp('Kurtosis')
+disp(Y(:,1:5))
+
+disp(' ')
+disp('Bera-Jarque test statistic')
+disp(Y(:,6))
 ```

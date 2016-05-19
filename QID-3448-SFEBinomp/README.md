@@ -1,36 +1,56 @@
 
-[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/banner.png" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
+[<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/banner.png" width="880" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
 
-## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEBinomp** [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
+## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEBinomp**[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
 
 ```yaml
 
 Name of QuantLet : SFEBinomp
 
-Published in : Statistics of Financial Markets
+Published in: Statistics of Financial Markets
 
-Description : 'Generates and plots 3 paths of a binomial process with p = 0.6. (2sigma)-intervals
-around the trend are given as well.'
+Description: 'Generates and plots 3 paths of a binomial process with p = 0.6. (2sigma)-intervals around the trend are given as well.'
 
-Keywords : 'binomial, discrete, graphical representation, plot, process, random,
-random-number-generation, random-walk, simulation, stochastic, stochastic-process, time-series'
+Keywords:
+- binomial
+- discrete
+- graphical representation
+- plot
+- process
+- random
+- random-number-generation
+- random-walk
+- simulation
+- stochastic
+- stochastic-process
+- time-series
 
-See also : SFEbinomv, SFEbinomv_log
+See also:
+- SFEbinomv
+- SFEbinomv_log
 
-Author : Alexander Ristig
+Author: Alexander Ristig
+Author[Matlab]: Christian Hafner
 
-Submitted : Sat, July 25 2015 by quantomas
+Submitted: Sat, July 25 2015 by quantomas
+Submitted[Matlab]: Tue, April 26 2016 by Ya Qian
 
-Input: 
-- n: number of observations
-- k: number of trajectories
-- p: probability of up movement
+Input:
+- n : number of observations
+- k : number of trajectories
+- p : probability of up movement
+
+Input[Matlab]:
+- obs : number of observations
+- traj : number of trajectories
+- p : probability of positive step being realised
 
 ```
 
 ![Picture1](SFEBinomp-1.png)
+![Picture2](SFEBinomp(Matlab).png)
 
-
+### R Code:
 ```r
 # clear variables and close windows
 rm(list = ls(all = TRUE))
@@ -77,5 +97,49 @@ if (k > 1) {
 points(s_1, type = "l", lwd = 0.5)    # upper confidence interval boundary
 points(s_2, type = "l", lwd = 0.5)    # lower confidence interval boundary
 points(trend, type = "l", lwd = 2.5)  # trend line 
+```
+### Matlab Code
+```matlab
+
+clear all
+close all
+clc
+
+% user inputs parameters
+disp('Please input observations,trajectories, p as: [100, 3, 0.6]');
+disp(' ') ;
+para=input('[observations trajectories p]=');
+while length(para) < 3
+  disp('Not enough input arguments. Please input in 1*3 vector form like [100, 3, 0.6] or [100 3 0.6]');
+  disp(' ') ;
+  para=input('[observations trajectories p]=');
+end
+obs=para(1);
+traj=para(2);
+p=para(3);
+
+% main simulation
+t=1:obs;
+trend = t*(2*p-1);
+std = sqrt(4*t*p*(1-p));
+s1=trend+2*std;
+s2=trend-2*std;
+z=unifrnd(p-1,p,traj,obs);    % Generate unifrnd in (p-1, p)
+z=z>0;
+z=z*2-1;                      % z=1 with p, z=-1 with 1-p 
+walk=zeros(traj,obs);
+for j=2:obs
+    walk(:,j)=walk(:,j-1)+z(:,j);
+end
+
+% plot of binomial process
+plot(walk','LineWidth',2.5)
+hold on
+plot(trend','k','LineWidth',2.5)
+plot([s1;s2]','--k')
+hold off 
+xlabel('Time')
+ylabel('Process')
+title(sprintf('Binomial processes with p=%0.5g',p))
 
 ```

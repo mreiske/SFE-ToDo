@@ -1,39 +1,38 @@
 
-[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/banner.png" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
+[<img src="https://github.com/QuantLet/Styleguide-and-FAQ/blob/master/pictures/banner.png" width="880" alt="Visit QuantNet">](http://quantlet.de/index.php?p=info)
 
-## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEbinomv** [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
+## [<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **SFEbinomv**[<img src="https://github.com/QuantLet/Styleguide-and-Validation-procedure/blob/master/pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
 
 ```yaml
-
 Name of QuantLet : SFEbinomv
 
-Published in : Statistics of Financial Markets
+Published in: Statistics of Financial Markets
 
-Description : 'Plots and compares the density of generated binomial processes with the density of
-normally distributed random variables.'
+Description: 'Plots and compares the density of generated binomial processes with the density of normally distributed random variables.'
 
-Keywords : 'binomial, density, distribution, estimation, graphical representation, kernel, normal,
-normal-distribution, plot, process, random-number-generation'
+Keywords: 'binomial, density, distribution, estimation, graphical representation, kernel, normal, normal-distribution, plot, process, random-number-generation'
 
-See also : SFEBinomp, SFEWienerProcess, SFEbinomv_log
+See also: SFEBinomp, SFEWienerProcess, SFEbinomv_log
 
-Author : Cindy Lamm, Ying Chen, Christian M. Hafner
+Author: Cindy Lamm, Ying Chen, Christian M. Hafner
+Author[Matlab]: Ying Chen, Christian M. Hafner
 
-Submitted : Sat, June 13 2015 by Lukas Borke
+Submitted: Sat, June 13 2015 by Lukas Borke
+Submitted[Matlab]: Wed, April 27 2016 by Ya Qian
 
-Input: 
-- FALSE: number of steps
-- k: number of paths
-- p: probability of up movement
+Input:
+- n : number of steps
+- k : number of paths
+- p : probability of up movement
 
-Example : 'User inputs the parameters n, k, p, then the density of generated binomial processes
-with the normal density is plotted.'
+Example: 'User inputs the parameters n, k, p, then the density of generated binomial processes with the normal density is plotted.'
 
 ```
 
 ![Picture1](SFEbinomv-1.png)
+![Picture2](SFEbinomv(Matlab).png)
 
-
+### R Code:
 ```r
 
 # clear variables and close windows
@@ -77,5 +76,52 @@ SFEbinomv = function(n, k, p) {
 
 # enter parameters as n = 100 (number of steps), k = 100 (number of paths), p = 0.5 (probability of up movement)
 SFEbinomv(n = 100, k = 100, p = 0.5) 
+```
+### Matlab Code
+```matlab
 
+clear
+close all
+clc
+
+% user inputs parameters
+disp('Please input steps n, paths k, Probability of up p as: [100, 1000, 0.5]');
+disp(' ') ;
+
+para=input('[n k p]=');
+
+while length(para) < 3
+  disp('Not enough input arguments. Please input in 1*3 vector form like [100, 1000, 0.5] or [100 1000 0.5]');
+  disp(' ') ;
+  para=input('[n k p]=');
+end
+
+n=para(1);
+k=para(2);
+p=para(3);
+if (p>1)|(p<0)
+  disp('Probability is to be between 0 and 1, please input p again!')
+  p=input('p=');
+end
+
+% main computation
+t=1:n;
+trend=n*(2*p-1);
+std=sqrt(4*n*p*(1-p));
+rand('state',0);
+z=rand(n,k);
+z=((floor(-z+p))+0.5)*2;
+x=sum(z); 
+h = 0.3*(max(x)-min(x));
+[f,xi] = ksdensity(x, 'width', h);      % Kernel-based density estimation with specified bandwidth
+norm=std*randn(k,1)+trend;
+[nf,nxi] = ksdensity(norm, 'width', h);
+
+% plot
+hold on
+plot(xi, f,'LineWidth',2,'Color','b');
+plot(nxi, nf,'LineWidth',2,'Color','r','LineStyle','-.');
+legend('Normal','Binomial',2);
+title(sprintf('Distribution of generated binominal processes'))  
+hold off
 ```
