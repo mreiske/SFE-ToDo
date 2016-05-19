@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: 'Computes the spectrum (frequency domain representation) of a white noise process'
 
-Keywords: time series, spectrum, simulation, signal, plot, spectral analysis, White Noise
+Keywords: time-series, spectral, simulation, plot, spectral-decomposition, white noise
 
 See also: SFEPer, SFEFreqFilt, SFESpecSim, SFESpecSignal, SFETsDecomp
 

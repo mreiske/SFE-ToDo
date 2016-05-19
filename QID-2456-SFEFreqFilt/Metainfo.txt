@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: 'Applies first differencing and 12-month centered moving average filter to SOI data and plots the results in time and frequency representation'
 
-Keywords: time series, spectrum, filter, frequency, plot, spectral analysis
+Keywords: time-series, spectral, filter, frequency, plot, spectral-decomposition
 
 See also: SFEPer, SFESignal, SFESpecSim, SFESpecWN, SFETsDecomp
 

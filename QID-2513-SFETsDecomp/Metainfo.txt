@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: 'SFETsDecomp computes plots showing the decomposition of a time series into sinosoids with frequencies f={0.4, 0.1, 0.04}'
 
-Keywords: time series, spectrum, simulation, signal, plot, spectral analysis, time series decomposition, sinosoids
+Keywords: time-series, spectral, simulation, plot, spectral-decomposition
 
 See also: SFEPer, SFEFreqFilt, SFESpecSim, SFESpecWN, SFETsDecomp
 

@@ -1,11 +1,11 @@
-Name of QuantLet: SFESpecSim
+﻿Name of QuantLet: SFESpecSim
 
 Published in: Statistics of Financial Markets
 
 Description: 'Simulates AR(1), AR(2), MA(1), SAR(1) processes
 and computes the theoretical spectral densities'
 
-Keywords: time series, spectrum, simulation, plots, spectral, ar, ma, sar
+Keywords: time-series, simulation, plot, spectral, autoregressive, moving-average, spectral-decomposition
 
 See also: SFEPer, SFEFreqFilt, SFESignal, SFESpecWN, SFETsDecomp
 
@@ -13,4 +13,4 @@ Author: Elisabeth Bommes, Caroline Kleist
 
 Submitted: Mon, May 09 2016 by Christoph Schult
 
-Output: 'Spectral density graphs for AR(1), AR(2), MA(1) and SAR(1) processes’.
+Output: 'Spectral density graphs for AR(1), AR(2), MA(1) and SAR(1) processes.'

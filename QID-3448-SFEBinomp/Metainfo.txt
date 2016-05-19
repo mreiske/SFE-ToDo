@@ -34,7 +34,7 @@ Input:
 - k : number of trajectories
 - p : probability of up movement
 
-[Matlab]
+Input[Matlab]:
 - obs : number of observations
 - traj : number of trajectories
 - p : probability of positive step being realised

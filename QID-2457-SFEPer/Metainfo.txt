@@ -4,7 +4,7 @@ Published in: Statistics of Financial Markets
 
 Description: 'Computes time series plots for the time domain and the frequency domain, i.e. the periodogram'
 
-Keywords: time series, spectrum, filter, frequency, plot, spectral analysis, periodogram, acf, pacf
+Keywords: time-series, spectral, filter, frequency, plot, spectral-decomposition, acf, PACF
 
 See also: SFESignal, SFEFreqFilt, SFESpecSim, SFESpecWN, SFETsDecomp
 
