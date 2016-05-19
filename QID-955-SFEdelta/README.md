@@ -31,6 +31,8 @@ of time to maturity tau like [0.01, 1] a plot of the Delta of a call option is p
 
 ![Picture1](SFEdelta-1.png)
 
+![Picture2](SFEdelta-1(Matlab).png)
+
 
 ```r
 
