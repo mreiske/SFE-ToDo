@@ -11,6 +11,10 @@ __Workflow:__
 - Clone to your local folder
 - Add matlab file to the Q with corresponding Metainfo fields.
 - Make sure the matlab file is formatted as required by the styleguide.
+- Check the Metainfo.txt whether it can be parsed with yaml and additionally check
+	- 5 keywords at least 
+	- description has more than 10 words
+	- use CheckMetainfo.R to check for yaml convertibility
 - Create a pull request with the changes you made. Make sure only desired changes are comitted.
 
 
