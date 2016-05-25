@@ -5,7 +5,6 @@ Keywords: interest-rate, likelihood, yield, estimation, model
 See also: 'SFEcap, SFEcapvola, SFEcir, SFEcapvplot, SFECIRmle, SFEcirpricing, SFEcomCIR, SFEsimCIR, SFEsimVasi, SFEustb'
 Author[Matlab]: Li Sun
 Submitted[Matlab]: Mon, May 02 2016 by Meng Jou Lu
-Usage[Matlab]: Vasiml
 Input[Matlab]: The yields of the US 3 month treasury bill from 1998 to 2008
 Output[Matlab]: MLE results of the Vasicek model
 Datafiles[Matlab]: yield_US3month9808.txt
