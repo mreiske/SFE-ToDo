@@ -1,6 +1,6 @@
 Name of QuantLet : SFEportfolio
 Published in: Statistics of Financial Markets
-Description: 'produces a PP and a QQ plot of the daily return of the optimal (variance efficient) portfolio'
+Description: 'Produces a PP and a QQ plot of the daily return of the optimal (variance efficient) portfolio'
 Keywords:
 - portfolio
 - financial

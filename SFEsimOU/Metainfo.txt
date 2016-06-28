@@ -1,6 +1,6 @@
 Name of QuantLet: SFEsimOU
 Published in: Statistics of Financial Markets
-Description: 'plots a simulated Ornstein-Uhlenbeck process using the parameters given by the user'
+Description: 'Plots a simulated Ornstein-Uhlenbeck process using the parameters given by the user'
 Keywords:
 - ornstein-uhlenbeck
 - stochastic
@@ -11,4 +11,4 @@ Author[Matlab]: Torsten Kleinow
 Submitted[Matlab]: Sat, November 10 2012 by Dedy Dwi Prastyo
 Input[Matlab]:
 - Params: num. of obs., beta, gamma, mean
-Example: 'plot of a simulated Ornstein-Uhlenbeck process'
+Example: 'Plot of a simulated Ornstein-Uhlenbeck process'
